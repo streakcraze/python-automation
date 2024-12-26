@@ -5,6 +5,8 @@ import gzip  # Import the gzip library for file compression
 import tempfile  # Import the tempfile library for creating temporary directories
 
 def rotate_logs():
+    print("Rotating logs...")  # Print a message indicating that logs are being rotated
+    
     temp_dir = tempfile.gettempdir()  # Get the system's temporary directory
     log_dir = os.path.join(temp_dir, "scheduled_logs")  # Directory where log files are stored
     archive_dir = os.path.join(os.path.dirname(__file__), "../../archive")  # Directory where archived logs will be stored
