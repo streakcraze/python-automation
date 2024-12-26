@@ -1,39 +1,61 @@
-# My Automation Project
+# Python Automation Template
 
-This project is designed to automate various tasks using Python scripts and utilities.
+This project is a template for automating tasks using Python. It includes scheduling the generation of logs every minute and rotating logs every five minutes. The generated logs are stored in the system's temporary directory, and the rotated logs are compressed and archived within the project's directory to release disk space.
 
 ## Project Structure
 
 ```
-my-automation-project
-├── src
-│   ├── main.py          # Entry point of the automation project
-│   ├── utils
-│   │   └── helpers.py   # Utility functions for scripts
-│   └── scripts
-│       └── example_script.py  # Example automation script
-├── requirements.txt     # Project dependencies
-└── README.md            # Project documentation
+python-automation-template/
+│
+├── src/
+│   ├── main.py
+│   ├── scripts/
+│   │   ├── generate_logs.py
+│   │   ├── log_rotation.py
+│   ├── utils/
+│   │   ├── scheduler_helper.py
+│
+├── archive/  # Directory where archived logs are stored
+│
+├── README.md
+│
+└── requirements.txt  # List of required packages
 ```
 
-## Setup Instructions
+## Setup
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   cd my-automation-project
+1. **Clone the repository**:
+   ```sh
+   git clone https://github.com/your-username/python-automation-template.git
+   cd python-automation-template
    ```
 
-2. Install the required dependencies:
+2. **Create and activate a virtual environment**:
+   ```sh
+   python -m venv venv
+   # On Windows
+   venv\Scripts\activate
+   # On macOS/Linux
+   source venv/bin/activate
    ```
+
+3. **Install the required packages**:
+   ```sh
    pip install -r requirements.txt
    ```
 
-## Usage
+## Running the Project
 
-To run the automation project, execute the main script:
-```
+To start the automation project, run the `main.py` script:
+```sh
 python src/main.py
 ```
 
-For more specific usage of individual scripts, refer to their respective documentation within the script files.
+## Functionality
+
+- **Log Generation**: The project schedules the generation of logs every minute. The logs are stored in the system's temporary directory under the `scheduled_logs` folder.
+- **Log Rotation**: The project schedules log rotation every five minutes. During log rotation, the logs in the temporary directory are compressed and archived within the project's `archive` directory to release disk space.
+
+## Practical Considerations
+
+In a practical project, it is recommended to store the archived logs in a database or cloud storage for better management and accessibility.
