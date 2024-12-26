@@ -8,3 +8,11 @@ def schedule_job_every_five_minutes(job):
     while True:
         schedule.run_pending()  # Run all scheduled tasks that are due
         time.sleep(1)  # Sleep for 1 second before checking again
+
+def schedule_job_every_minute(job):
+    # Schedule the given job every minute
+    schedule.every(1).minute.do(job)  # Schedule the job function to run every minute
+
+    while True:
+        schedule.run_pending()  # Run all scheduled tasks that are due
+        time.sleep(1)  # Sleep for 1 second before checking again

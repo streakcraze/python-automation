@@ -1,4 +1,1 @@
-requests
-pandas
-numpy
-pytest
+schedule

@@ -2,10 +2,16 @@ import os  # Import the os library for file and directory operations
 import shutil  # Import the shutil library for file operations
 from datetime import datetime  # Import the datetime library for timestamping
 import gzip  # Import the gzip library for file compression
+import tempfile  # Import the tempfile library for creating temporary directories
 
 def rotate_logs():
-    log_dir = "/path/to/logs"  # Directory where log files are stored
-    archive_dir = "/path/to/archive"  # Directory where archived logs will be stored
+    temp_dir = tempfile.gettempdir()  # Get the system's temporary directory
+    log_dir = os.path.join(temp_dir, "scheduled_logs")  # Directory where log files are stored
+    archive_dir = os.path.join(os.path.dirname(__file__), "../../archive")  # Directory where archived logs will be stored
+    
+    if not os.path.exists(log_dir):  # Check if log directory exists
+        print("No logs found.")  # Print a message indicating that no logs were found
+        return  # Terminate the function
     
     if not os.path.exists(archive_dir):  # Check if archive directory exists
         os.makedirs(archive_dir)  # Create archive directory if it doesn't exist
