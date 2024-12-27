@@ -1,0 +1,2 @@
+source_dir=C:\Users\odhis\Downloads\test_automation
+dest_dir=C:\Users\odhis\Desktop\projects

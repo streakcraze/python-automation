@@ -18,14 +18,23 @@ my-automation-project
 
 ## Setup Instructions
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   cd my-automation-project
+1. **Clone the repository**:
+   ```sh
+   git clone https://github.com/your-username/python-automation-template.git
+   cd python-automation-template
    ```
 
-2. Install the required dependencies:
+2. **Create and activate a virtual environment**:
+   ```sh
+   python -m venv venv
+   # On Windows
+   venv\Scripts\activate
+   # On macOS/Linux
+   source venv/bin/activate
    ```
+
+3. **Install the required packages**:
+   ```sh
    pip install -r requirements.txt
    ```
 
