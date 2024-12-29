@@ -21,8 +21,8 @@ my-automation-project
 
 1. **Clone the repository**:
    ```sh
-   git clone https://github.com/your-username/python-automation-template.git
-   cd python-automation-template
+   git clone https://github.com/your-username/python-automation.git
+   cd copy_files
    ```
 
 2. **Create and activate a virtual environment**:

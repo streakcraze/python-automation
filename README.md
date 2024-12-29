@@ -4,7 +4,23 @@ This repository is a collection of different Python automation projects. Each pr
 
 ## Projects
 
-### 1. Copy Files
+### 1. Template
+This project serves as a template for automating tasks using Python. It includes example scripts and utility functions that can be customized for various automation tasks.
+
+**Project Structure:**
+```
+template/
+├── src/
+│   ├── main.py          # Entry point of the automation project
+│   ├── utils/
+│   │   └── helpers.py   # Utility functions for scripts
+│   └── scripts/
+│       └── example_script.py  # Example automation script
+├── requirements.txt     # Project dependencies
+└── README.md            # Project documentation
+```
+
+### 2. Copy Files
 This project automates the process of copying files from a source directory to a destination directory as defined in `directories.txt`.
 
 **Project Structure:**
@@ -21,7 +37,7 @@ copy_files/
 └── README.md            # Project documentation
 ```
 
-### 2. Schedule Job
+### 3. Schedule Job
 This project schedules the generation of logs every minute and rotates logs every five minutes. The generated logs are stored in the system's temporary directory, and the rotated logs are compressed and archived within the project's directory to release disk space.
 
 **Project Structure:**
@@ -39,18 +55,18 @@ schedule_job/
 └── README.md
 ```
 
-### 3. Template
-This project serves as a template for automating tasks using Python. It includes example scripts and utility functions that can be customized for various automation tasks.
+### 4. Chatbot
+This project implements a simple chatbot using Python. The chatbot can respond to predefined questions and can be extended with more functionalities.
 
 **Project Structure:**
 ```
-template/
+chatbot/
 ├── src/
-│   ├── main.py          # Entry point of the automation project
+│   ├── main.py          # Entry point of the chatbot project
 │   ├── utils/
-│   │   └── helpers.py   # Utility functions for scripts
+│   │   └── chatbot_helper.py   # Utility function creating the chatbot
 │   └── scripts/
-│       └── example_script.py  # Example automation script
+│       └── chatbot_script.py  # Script for training the chatbot
 ├── requirements.txt     # Project dependencies
 └── README.md            # Project documentation
 ```
