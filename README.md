@@ -71,6 +71,22 @@ chatbot/
 └── README.md            # Project documentation
 ```
 
+### 5. Social Bot
+This project automates the process of gathering Instagram analytics of a specified user using `instabot`.
+
+**Project Structure:**
+```
+social_bot/
+├── src/
+│   ├── main.py          # Entry point of the automation project
+│   ├── utils/
+│   │   └── helpers.py   # Utility functions for scripts
+│   └── scripts/
+│       └── instagram_analytics.py  # Script to gather Instagram analytics
+├── requirements.txt     # Project dependencies
+└── README.md            # Project documentation
+```
+
 ## Setup Instructions
 
 For each project, follow these steps to set up and run the automation scripts:

@@ -8,3 +8,6 @@ __pycache__/
 
 # Ignore environment variables
 .env
+
+# Ignore log folder
+social_bot/config/
