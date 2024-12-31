@@ -3,7 +3,6 @@ from scripts.instagram_analytics import gather_instagram_analytics
 import shutil
 import os
 
-
 def main():
     # Delete the config folder
     config_folder = os.path.join(os.path.dirname(__file__), '..', 'config')
@@ -17,10 +16,26 @@ def main():
         print("Failed to authenticate Instagram. Exiting...")
         return
     
-    # Gather User Analytics
-    username = "arnold_odhis"
-    gather_instagram_analytics(bot, username)
+    # Extract username from specified_user.txt
+    user_file = os.path.join(os.path.dirname(__file__), '..', 'specified_user.txt')
+    if not os.path.exists(user_file):
+        print("specified_user.txt not found. Exiting...")
+        return
     
+    with open(user_file, 'r') as file:
+        line = file.readline().strip()
+        if line.startswith("username="):
+            username = line.split("=", 1)[1].strip()
+        else:
+            print("Invalid format in specified_user.txt. Exiting...")
+            return
+    
+    if not username:
+        print("No username specified in specified_user.txt. Exiting...")
+        return
+    
+    # Gather User Analytics
+    gather_instagram_analytics(bot, username)
 
 if __name__ == "__main__":
     main()

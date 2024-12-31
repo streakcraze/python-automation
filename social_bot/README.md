@@ -35,6 +35,11 @@ template/
     INSTAGRAM_PASSWORD=your_password
     ```
 
+4. Specify the user to be analyzed in `specified_user.txt`:
+    ```plaintext
+    username=cristiano
+    ```
+
 ## Usage
 
 Run the main script to gather Instagram analytics:

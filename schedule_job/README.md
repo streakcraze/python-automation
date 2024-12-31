@@ -1,6 +1,7 @@
 # Python Automation Template
 
 This project is a template for automating tasks using Python. It includes scheduling the generation of logs every minute and rotating logs every five minutes. The generated logs are stored in the system's temporary directory, and the rotated logs are compressed and archived within the project's directory to release disk space.
+The script uses multithreading to concurrent schedule the generation and rotation of logs at different intervals.
 
 ## Project Structure
 
