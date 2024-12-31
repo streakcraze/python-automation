@@ -11,7 +11,7 @@ This project serves as a template for automating tasks using Python. It includes
 This project automates the process of copying files from a source directory to a destination directory as defined in `directories.txt`.
 
 ### 3. Schedule Job
-This project schedules the generation of logs every minute and rotates logs every five minutes. The generated logs are stored in the system's temporary directory, and the rotated logs are compressed and archived within the project's directory to release disk space. The script uses multithreading to concurrent schedule the generation and rotation of logs at different intervals.
+This project schedules the generation of logs every minute and rotates logs every five minutes. The generated logs are stored in the system's temporary directory, and the rotated logs are compressed and archived within the project's directory to release disk space. The script uses multithreading to concurrently schedule the generation and rotation of logs at different intervals.
 
 ### 4. Chatbot
 This project implements a simple chatbot using Python. The chatbot can respond to predefined questions and can be extended with more functionalities. It utilizes the `google-generativeai` SDK and the `Gemini` model for generating responses.
