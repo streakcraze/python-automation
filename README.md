@@ -19,6 +19,9 @@ This project implements a simple chatbot using Python. The chatbot can respond t
 ### 5. Social Bot
 This project automates the process of gathering Instagram analytics of a specified user using `instabot`. The analytics include the top posts and the average sentiments of their comments.
 
+### 6. Testing
+This project showcases the automation of Python testing using the `unittest` framework. It includes sample functions and their corresponding test cases.
+
 ## Setup Instructions
 
 For each project, follow these steps to set up and run the automation scripts:
