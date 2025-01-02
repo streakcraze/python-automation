@@ -1,6 +1,6 @@
 # Automated Testing Project
 
-This project showcases the automation of Python testing using the `unittest` framework and Flask routes.
+This project showcases the automation of Python testing using the `unittest` framework, Flask routes with basic authentication, and SQLite database integration.
 
 ## Project Structure
 
