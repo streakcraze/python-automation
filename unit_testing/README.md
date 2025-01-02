@@ -1,6 +1,6 @@
 # Automated Testing Project
 
-This project showcases the automation of Python testing using the `unittest` framework.
+This project showcases the automation of Python testing using the `unittest` framework and Flask routes.
 
 ## Project Structure
 
@@ -38,6 +38,13 @@ automated-testing/
     ```sh
     pip install -r requirements.txt
     ```
+
+## Running the Flask App
+
+To run the Flask app, execute the following command:
+```sh
+python src/sample.py
+```
 
 ## Running Tests
 
