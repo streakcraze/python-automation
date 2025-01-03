@@ -8,10 +8,10 @@ This project showcases the automation of Python testing using the `unittest` fra
 automated-testing/
 ├── tests/
 │   ├── __init__.py
-│   ├── test_sample.py
+│   ├── test_main.py
 ├── src/
 │   ├── __init__.py
-│   ├── sample.py
+│   ├── main.py
 ├── requirements.txt
 ├── README.md
 ├── .gitignore
@@ -43,7 +43,7 @@ automated-testing/
 
 To run the Flask app, execute the following command:
 ```sh
-python src/sample.py
+python src/main.py
 ```
 
 ## Running Tests

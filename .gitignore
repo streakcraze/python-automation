@@ -11,3 +11,6 @@ __pycache__/
 
 # Ignore log folder
 social_bot/config/
+
+# Ignore sqlite db
+unit_testing/database.db
