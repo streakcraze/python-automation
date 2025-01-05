@@ -5,12 +5,7 @@ from utils import draw_shape, add_labels_and_buttons
 
 
 def update_mouse_position(event):
-    # Calculate the relative position
-    canvas_x = canvas.winfo_rootx()
-    canvas_y = canvas.winfo_rooty()
-    x = event.x_root - canvas_x
-    y = event.y_root - canvas_y
-    client_socket.send(f"{x},{y}".encode('utf-8'))
+    client_socket.send(f"{event.x},{event.y}".encode('utf-8'))
 
 
 def create_window():
@@ -26,7 +21,7 @@ def create_window():
     # Ensure the canvas captures mouse motion events
     canvas.bind('<Motion>', update_mouse_position)
 
-    add_labels_and_buttons(canvas, update_mouse_position)
+    add_labels_and_buttons(canvas)
     draw_shape(canvas)  # Draw the default shape
 
     window.mainloop()

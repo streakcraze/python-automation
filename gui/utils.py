@@ -29,44 +29,19 @@ def select_color(color, canvas):
     selected_color = color
     draw_shape(canvas, selected_shape, selected_color)
 
+def create_custom_button(canvas, text, command, x, y):
+    button_id = canvas.create_text(x, y, text=text, fill="black", activefill="blue", font=("Arial", 10, "underline"))
+    canvas.tag_bind(button_id, "<Button-1>", lambda event: command())
 
-def add_labels_and_buttons(canvas, update_mouse_position=None):
-    label_shapes = tk.Label(canvas, text="Shapes")
-    label_shapes.place(x=180, y=250)
-    if update_mouse_position:
-        label_shapes.bind('<Motion>', update_mouse_position)
+def add_labels_and_buttons(canvas):
+    canvas.create_text(180, 250, text="Shapes")
     
-    button_square = tk.Button(canvas, text="Square", command=lambda: select_shape("square", canvas))
-    button_square.place(x=180, y=280)
-    if update_mouse_position:
-        button_square.bind('<Motion>', update_mouse_position)
+    create_custom_button(canvas, "Square", lambda: select_shape("square", canvas), 180, 280)
+    create_custom_button(canvas, "Circle", lambda: select_shape("circle", canvas), 270, 280)
+    create_custom_button(canvas, "Triangle", lambda: select_shape("triangle", canvas), 360, 280)
     
-    button_circle = tk.Button(canvas, text="Circle", command=lambda: select_shape("circle", canvas))
-    button_circle.place(x=270, y=280)
-    if update_mouse_position:
-        button_circle.bind('<Motion>', update_mouse_position)
+    canvas.create_text(180, 320, text="Colors")
     
-    button_triangle = tk.Button(canvas, text="Triangle", command=lambda: select_shape("triangle", canvas))
-    button_triangle.place(x=360, y=280)
-    if update_mouse_position:
-        button_triangle.bind('<Motion>', update_mouse_position)
-    
-    label_colors = tk.Label(canvas, text="Colors")
-    label_colors.place(x=180, y=320)
-    if update_mouse_position:
-        label_colors.bind('<Motion>', update_mouse_position)
-    
-    button_red = tk.Button(canvas, text="Red", command=lambda: select_color("red", canvas))
-    button_red.place(x=180, y=350)
-    if update_mouse_position:
-        button_red.bind('<Motion>', update_mouse_position)
-    
-    button_green = tk.Button(canvas, text="Green", command=lambda: select_color("green", canvas))
-    button_green.place(x=270, y=350)
-    if update_mouse_position:
-        button_green.bind('<Motion>', update_mouse_position)
-    
-    button_blue = tk.Button(canvas, text="Blue", command=lambda: select_color("blue", canvas))
-    button_blue.place(x=360, y=350)
-    if update_mouse_position:
-        button_blue.bind('<Motion>', update_mouse_position)
+    create_custom_button(canvas, "Red", lambda: select_color("red", canvas), 180, 350)
+    create_custom_button(canvas, "Green", lambda: select_color("green", canvas), 270, 350)
+    create_custom_button(canvas, "Blue", lambda: select_color("blue", canvas), 360, 350)
