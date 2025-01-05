@@ -4,11 +4,6 @@ import threading
 from PIL import Image, ImageTk
 from utils import draw_shape, add_labels_and_buttons
 
-selected_shape = "square"
-selected_color = "red"
-
-def update_mouse_cursor(x, y):
-    canvas.coords(mouse_cursor, x, y)  # Update the position of the mouse cursor
 
 def receive_coordinates():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -24,9 +19,11 @@ def receive_coordinates():
         if not data:
             break
         x, y = map(int, data.split(','))
-        update_mouse_cursor(x, y)
+        # Update the position of the mouse cursor
+        canvas.coords(mouse_cursor, x, y)
 
     client_socket.close()
+
 
 def create_window():
     global canvas, mouse_cursor, cursor_image
@@ -39,15 +36,17 @@ def create_window():
     canvas.pack()
 
     add_labels_and_buttons(canvas)
-    draw_shape(canvas, selected_shape, selected_color)  # Draw the default shape
+    draw_shape(canvas)  # Draw the default shape
 
     # Load and resize the mouse cursor image using Pillow
     image = Image.open("cursor.png")
     image = image.resize((20, 20), Image.LANCZOS)  # Resize the image to 20x20 pixels
     cursor_image = ImageTk.PhotoImage(image)
     mouse_cursor = canvas.create_image(0, 0, anchor="nw", image=cursor_image)
+    canvas.tag_raise(mouse_cursor) # Ensure the mouse cursor is above other elements
 
     window.mainloop()
+
 
 if __name__ == "__main__":
     threading.Thread(target=receive_coordinates).start()
