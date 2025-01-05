@@ -21,6 +21,8 @@ def receive_coordinates():
         x, y = map(int, data.split(','))
         # Update the position of the mouse cursor
         canvas.coords(mouse_cursor, x, y)
+        # Ensure the mouse cursor is above other elements
+        canvas.tag_raise(mouse_cursor)
 
     client_socket.close()
 
@@ -40,10 +42,9 @@ def create_window():
 
     # Load and resize the mouse cursor image using Pillow
     image = Image.open("cursor.png")
-    image = image.resize((20, 20), Image.LANCZOS)  # Resize the image to 20x20 pixels
+    image = image.resize((15, 15), Image.LANCZOS)  # Resize the image to 20x20 pixels
     cursor_image = ImageTk.PhotoImage(image)
     mouse_cursor = canvas.create_image(0, 0, anchor="nw", image=cursor_image)
-    canvas.tag_raise(mouse_cursor) # Ensure the mouse cursor is above other elements
 
     window.mainloop()
 
