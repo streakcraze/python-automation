@@ -2,6 +2,10 @@ import tkinter as tk
 import socket
 import threading
 from PIL import Image, ImageTk
+from utils import draw_shape, add_labels_and_buttons
+
+selected_shape = "square"
+selected_color = "red"
 
 def update_mouse_cursor(x, y):
     canvas.coords(mouse_cursor, x, y)  # Update the position of the mouse cursor
@@ -29,10 +33,13 @@ def create_window():
 
     window = tk.Tk()
     window.title("Receiver Window")
-    window.geometry("400x300")  # Set the window size to 400x300 pixels
+    window.geometry("600x400")  # Set the window size to 600x400 pixels
 
-    canvas = tk.Canvas(window, width=400, height=300)
+    canvas = tk.Canvas(window, width=600, height=400, bg="white")
     canvas.pack()
+
+    add_labels_and_buttons(canvas)
+    draw_shape(canvas, selected_shape, selected_color)  # Draw the default shape
 
     # Load and resize the mouse cursor image using Pillow
     image = Image.open("cursor.png")
