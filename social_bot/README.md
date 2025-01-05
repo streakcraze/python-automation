@@ -20,7 +20,7 @@ template/
 
 1. Clone the repository:
     ```sh
-    git clone <repository_url>
+    git clone https://github.com/streakcraze/python-automation.git
     cd social_bot
     ```
 

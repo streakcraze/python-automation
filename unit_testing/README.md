@@ -17,38 +17,31 @@ automated-testing/
 ├── .gitignore
 ```
 
-## Setup
+## Setup Instructions
 
-1. Create a virtual environment:
-    ```sh
-    python -m venv venv
-    ```
+1. **Clone the repository**:
+   ```sh
+   git clone https://github.com/streakcraze/python-automation.git
+   cd unit_testing
+   ```
 
-2. Activate the virtual environment:
-    - On Windows:
-        ```sh
-        venv\Scripts\activate
-        ```
-    - On macOS/Linux:
-        ```sh
-        source venv/bin/activate
-        ```
+2. **Create and activate a virtual environment**:
+   ```sh
+   python -m venv venv
+   # On Windows
+   venv\Scripts\activate
+   # On macOS/Linux
+   source venv/bin/activate
+   ```
 
-3. Install the dependencies:
-    ```sh
-    pip install -r requirements.txt
-    ```
+3. **Install the required packages**:
+   ```sh
+   pip install -r requirements.txt
+   ```
 
-## Running the Flask App
+## Usage
 
-To run the Flask app, execute the following command:
-```sh
-python src/main.py
-```
-
-## Running Tests
-
-To run the tests, execute the following command:
+Execute the following command to run the tests:
 ```sh
 python -m unittest discover -s tests
 ```

@@ -22,14 +22,17 @@ This project automates the process of gathering Instagram analytics of a specifi
 ### 6. Unit Testing
 This project showcases the automation of Python unit testing using the `unittest` framework, Flask routes with basic authentication, and SQLite database integration.
 
+### 7. Remote Window
+This project demonstrates mouse tracking and interaction replication across two windows using a client-server setup. It beautifully interweaves `tkinter`, `sockets`, `threading`, and `pyautoit` to achieve these functionalities.
+
 ## Setup Instructions
 
 For each project, follow these steps to set up and run the automation scripts:
 
 1. **Clone the repository**:
    ```sh
-   git clone https://github.com/your-username/python-automation-projects.git
-   cd python-automation-projects/<project-directory>
+   git clone https://github.com/streakcraze/python-automation.git
+   cd <project-directory>
    ```
 
 2. **Create and activate a virtual environment**:
@@ -44,11 +47,6 @@ For each project, follow these steps to set up and run the automation scripts:
 3. **Install the required packages**:
    ```sh
    pip install -r requirements.txt
-   ```
-
-4. **Run the main script**:
-   ```sh
-   python src/main.py
    ```
 
 For more specific usage of individual scripts, refer to their respective documentation within the script files.

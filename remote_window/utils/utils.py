@@ -1,4 +1,6 @@
-import tkinter as tk
+"""This file contains utility functions for drawing shapes, 
+selecting shapes and colors, and adding labels and buttons to the canvas."""
+
 
 selected_shape = "square"
 selected_color = "red"
@@ -29,9 +31,11 @@ def select_color(color, canvas):
     selected_color = color
     draw_shape(canvas, selected_shape, selected_color)
 
+
 def create_custom_button(canvas, text, command, x, y):
     button_id = canvas.create_text(x, y, text=text, fill="black", activefill="blue", font=("Arial", 10, "underline"))
     canvas.tag_bind(button_id, "<Button-1>", lambda event: command())
+
 
 def add_labels_and_buttons(canvas):
     canvas.create_text(180, 250, text="Shapes")
