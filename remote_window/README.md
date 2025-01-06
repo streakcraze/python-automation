@@ -9,14 +9,10 @@ python-automation/
 │
 ├── README.md                # Project overview and instructions
 ├── requirements.txt         # List of dependencies
+├── tracker_window.py        # Client-side application that sends mouse coordinates
+├── receiver_window.py       # Server-side application that receives mouse coordinates
 ├── utils/
-│   └── utils.py             # Utility functions for mouse interactions
-├── tracker/
-│   ├── tracker_window.py    # Client-side application that sends mouse coordinates
-│   └── __init__.py          
-├── receiver/
-│   ├── receiver_window.py   # Server-side application that receives mouse coordinates
-│   └── __init__.py          
+│   └── helpers.py           # Utility functions for mouse interactions
 └── static/                  # Stores static files, e.g., images
     └── cursor.png           
 ```
@@ -56,19 +52,18 @@ python-automation/
    - Run `receiver_window.py` to start the server that listens for incoming mouse coordinates.
 
    ```sh
-   python receiver/receiver_window.py
+   python receiver_window.py
    ```
 
 5. **Start the Client**:
    - Run `tracker_window.py` to start the client that sends mouse coordinates to the server.
 
    ```sh
-   python tracker/tracker_window.py
+   python tracker_window.py
    ```
 
 ## Dependencies
 
-- `tkinter`: Standard Python interface to the Tk GUI toolkit.
 - `Pillow`: Python Imaging Library (PIL) fork for opening, manipulating, and saving image files.
 - `pyautoit`: Python wrapper for AutoIt.
 

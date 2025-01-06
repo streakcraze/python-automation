@@ -5,7 +5,7 @@
 import tkinter as tk
 import socket
 import threading
-from utils.utils import draw_shape, add_labels_and_buttons
+from utils.helpers import draw_shape, add_labels_and_buttons
 
 
 def update_mouse_position(event):

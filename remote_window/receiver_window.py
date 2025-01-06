@@ -6,7 +6,7 @@ import tkinter as tk
 import socket
 import threading
 from PIL import Image, ImageTk
-from utils.utils import draw_shape, add_labels_and_buttons
+from utils.helpers import draw_shape, add_labels_and_buttons
 import autoit
 
 
@@ -30,10 +30,10 @@ def update_cursor_position(x, y):
 
 
 def load_cursor_image():
-    global mouse_cursor
+    global mouse_cursor, cursor_image  # Add cursor_image to global variables
     # Load and resize the mouse cursor image using Pillow
     image = Image.open("static/cursor.png")
-    image = image.resize((15, 15), Image.LANCZOS)  # Resize the image to 20x20 pixels
+    image = image.resize((15, 15), Image.LANCZOS)
     cursor_image = ImageTk.PhotoImage(image)
     mouse_cursor = canvas.create_image(0, 0, anchor="nw", image=cursor_image)
 
